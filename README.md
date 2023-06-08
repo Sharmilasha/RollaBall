@@ -1,6 +1,7 @@
 # RollaBall
 
 ## Aim:
+To Roll a Ball using C# program in unity .
 
 ## Algorithm:
 
@@ -43,7 +44,57 @@ Copy the PlayerController and drag to Script folder
 Double click the PlayerController file and type the coding
 
 ## Program:
+~~~
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class player : MonoBehaviour
+{
+    // Start is called before the first frame update
+    public float xforce = 3.0f;
+    public float yforce = 500.0f;
+    public float zforce = 3.0f;
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        float x = 0.0f;
+        float y = 0.0f;
+        float z = 0.0f;
+    if(Input.GetKey(KeyCode.X))
+        {
+        x =x-xforce;
+        }
+     if (Input.GetKey(KeyCode.A))
+       {
+        x = x + xforce;
+      }
+     if (Input.GetKeyDown(KeyCode.Y))
+     {
+        y = yforce;
+      }
+      if (Input.GetKey(KeyCode.Z))
+     {
+       z = z - zforce;
+      }
+     if (Input.GetKey(KeyCode.B))
+     {
+        z = z + zforce;
+     }
+     GetComponent<Rigidbody>().AddForce(x, y, z);
+     
+    }
+}
+
+~~~
 
 ## Output:
+![r0](https://github.com/Sharmilasha/RollaBall/assets/94506182/be9b001e-36fb-4d23-b988-eddb71901620)
 
 ## Result:
+Thus, The 3D application for Roll the Ball objects in unity is developed successfully.
